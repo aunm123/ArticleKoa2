@@ -17,46 +17,48 @@
 
 	// addCssByLink('/css/jinri.css')
 </script>
-
+<style type="text/css">
+    .lazy {
+        width: 80%;
+        min-height: 400px;
+        background: url('/images/loading.gif') 50% no-repeat;
+    }
+</style>
 <div class="wrap mt20">
     <div class="box cat_pos clearfix">
     </div>
 </div>
 <div class="wrap mt20">
     <div class="txt">
-        <%- article.content %>
+        <div class="thead">
+            <%- article.name %>
+        </div>
+        <div class="tcont" style="text-align: center;">
+            <%- article.content %>
+        </div>
+
     </div>
 </div>
 
-<script src="js/echo.min.js"></script>
+<script src="/js/echo.min.js"></script>
 <script>
-	Echo.init({
-		offset: 0,
-		throttle: 3000
-	});
+	$(function () {
+
+		$('.tcont img').addClass('lazy');
+//		$('.tcont img').each(function (index, item) {
+//			let ii = $(item);
+//			let sourceUrl = ii.attr('src');
+//			ii.attr('src','/images/blank.gif');
+//			ii.attr('data-echo',sourceUrl);
+//		})
+
+		Echo.init({
+			offset: 0,
+			throttle: 0
+		});
+	})
 </script>
 
 
-<% include ../comment/footer.ejs %>
 
-<!--<p></p><p><img src="https://www.zy9tc.com/images/2018/01/11/2QCGe.jpg"><img-->
-            <!--src="https://www.zy9tc.com/images/2018/01/11/2QEoC.jpg"><img-->
-            <!--src="https://www.zy9tc.com/images/2018/01/11/2Q8qs.jpg"><img-->
-            <!--src="https://www.zy9tc.com/images/2018/01/11/2Q3va.jpg"><img-->
-            <!--src="https://www.zy9tc.com/images/2018/01/11/2QJcD.jpg"><img-->
-            <!--src="https://www.zy9tc.com/images/2018/01/11/2Qdli.jpg"><img-->
-            <!--src="https://www.zy9tc.com/images/2018/01/11/2QWkO.jpg"><img-->
-            <!--src="https://www.zy9tc.com/images/2018/01/11/2Q4Zq.jpg"><img-->
-            <!--src="https://www.zy9tc.com/images/2018/01/11/2QybN.jpg"><img-->
-            <!--src="https://www.zy9tc.com/images/2018/01/11/2QvTy.jpg"><img-->
-            <!--src="https://www.zy9tc.com/images/2018/01/11/2QUGB.jpg"><img-->
-            <!--src="https://www.zy9tc.com/images/2018/01/11/2QOix.jpg"><img-->
-            <!--src="https://www.zy9tc.com/images/2018/01/11/2Nrqd.jpg"><img-->
-            <!--src="https://www.zy9tc.com/images/2018/01/11/2Npvt.jpg"><img-->
-            <!--src="https://www.zy9tc.com/images/2018/01/11/2NaXY.jpg"><img-->
-            <!--src="https://www.zy9tc.com/images/2018/01/11/2NSl8.jpg"><img-->
-            <!--src="https://www.zy9tc.com/images/2018/01/11/2NgJb.jpg"><img-->
-            <!--src="https://www.zy9tc.com/images/2018/01/11/2NeYg.jpg"><img-->
-            <!--src="https://www.zy9tc.com/images/2018/01/11/2NZbT.jpg"><img-->
-            <!--src="https://www.zy9tc.com/images/2018/01/11/2NYML.jpg"><img-->
-            <!--src="https://www.zy9tc.com/images/2018/01/11/2NFap.jpg"></p>-->
+

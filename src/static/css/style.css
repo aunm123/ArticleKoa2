@@ -1000,3 +1000,15 @@ img {
 	margin: 10px 5% 10px 5%;
 	padding: 10px 0px 40px 0px;
 }
+
+.txt .tcont {
+	font: 16px/28px PingFangSC-Regular,'-apple-system',Simsun;
+	overflow: hidden;
+	word-wrap: break-word;
+	word-break: break-all;
+	line-height: 39px;
+}
+
+.txt .tcont img {
+	margin-top: 7px;
+}
