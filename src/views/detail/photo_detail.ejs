@@ -1,13 +1,62 @@
 <% include ../comment/header.ejs %>
 
+<script type="text/javascript">
+	function addCssByLink(url) {
+		var doc = document;
+		var link = doc.createElement("link");
+		link.setAttribute("rel", "stylesheet");
+		link.setAttribute("type", "text/css");
+		link.setAttribute("href", url);
+
+		var heads = doc.getElementsByTagName("head");
+		if (heads.length)
+			heads[0].appendChild(link);
+		else
+			doc.documentElement.appendChild(link);
+	}
+
+	// addCssByLink('/css/jinri.css')
+</script>
+
 <div class="wrap mt20">
     <div class="box cat_pos clearfix">
     </div>
 </div>
 <div class="wrap mt20">
     <div class="txt">
+        <%- article.content %>
     </div>
 </div>
 
+<script src="js/echo.min.js"></script>
+<script>
+	Echo.init({
+		offset: 0,
+		throttle: 3000
+	});
+</script>
+
 
 <% include ../comment/footer.ejs %>
+
+<!--<p></p><p><img src="https://www.zy9tc.com/images/2018/01/11/2QCGe.jpg"><img-->
+            <!--src="https://www.zy9tc.com/images/2018/01/11/2QEoC.jpg"><img-->
+            <!--src="https://www.zy9tc.com/images/2018/01/11/2Q8qs.jpg"><img-->
+            <!--src="https://www.zy9tc.com/images/2018/01/11/2Q3va.jpg"><img-->
+            <!--src="https://www.zy9tc.com/images/2018/01/11/2QJcD.jpg"><img-->
+            <!--src="https://www.zy9tc.com/images/2018/01/11/2Qdli.jpg"><img-->
+            <!--src="https://www.zy9tc.com/images/2018/01/11/2QWkO.jpg"><img-->
+            <!--src="https://www.zy9tc.com/images/2018/01/11/2Q4Zq.jpg"><img-->
+            <!--src="https://www.zy9tc.com/images/2018/01/11/2QybN.jpg"><img-->
+            <!--src="https://www.zy9tc.com/images/2018/01/11/2QvTy.jpg"><img-->
+            <!--src="https://www.zy9tc.com/images/2018/01/11/2QUGB.jpg"><img-->
+            <!--src="https://www.zy9tc.com/images/2018/01/11/2QOix.jpg"><img-->
+            <!--src="https://www.zy9tc.com/images/2018/01/11/2Nrqd.jpg"><img-->
+            <!--src="https://www.zy9tc.com/images/2018/01/11/2Npvt.jpg"><img-->
+            <!--src="https://www.zy9tc.com/images/2018/01/11/2NaXY.jpg"><img-->
+            <!--src="https://www.zy9tc.com/images/2018/01/11/2NSl8.jpg"><img-->
+            <!--src="https://www.zy9tc.com/images/2018/01/11/2NgJb.jpg"><img-->
+            <!--src="https://www.zy9tc.com/images/2018/01/11/2NeYg.jpg"><img-->
+            <!--src="https://www.zy9tc.com/images/2018/01/11/2NZbT.jpg"><img-->
+            <!--src="https://www.zy9tc.com/images/2018/01/11/2NYML.jpg"><img-->
+            <!--src="https://www.zy9tc.com/images/2018/01/11/2NFap.jpg"></p>-->

@@ -4,8 +4,14 @@ const {reqUrl} = require('../util/Config.js');
 let photoController = {
 	
 	index: async (ctx, next) => {
+
+		let article = {}
+
 		await next();
-		await ctx.render('detail/photo_detail', {});
+		await ctx.render('detail/photo_detail', {
+			article
+		});
+
 	},
 }
 
