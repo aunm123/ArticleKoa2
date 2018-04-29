@@ -1,0 +1,49 @@
+<% include ../comment/header.ejs %>
+
+<script type="text/javascript">
+	function addCssByLink(url) {
+		var doc = document;
+		var link = doc.createElement("link");
+		link.setAttribute("rel", "stylesheet");
+		link.setAttribute("type", "text/css");
+		link.setAttribute("href", url);
+
+		var heads = doc.getElementsByTagName("head");
+		if (heads.length)
+			heads[0].appendChild(link);
+		else
+			doc.documentElement.appendChild(link);
+	}
+
+	// addCssByLink('/css/jinri.css')
+</script>
+<style type="text/css">
+    .lazy {
+        width: 80%;
+        min-height: 400px;
+        background: url('/images/loading.gif') 50% no-repeat;
+    }
+</style>
+<div class="wrap mt20">
+    <div class="box cat_pos clearfix">
+    </div>
+</div>
+<div class="wrap mt20">
+    <div class="new">
+        <div class="nbar">
+            <div class="nle"><h3>亚洲图片</h3></div>
+        </div>
+        <div class="plist">
+            <ul>
+                <li style="color: rgb(51, 51, 51); background-color: rgb(255, 255, 255);"><a
+                            href="/html/photo/19536.html" target="_blank" title="迷人的红唇 好想放东西进去[12P]"><em>迷人的红唇
+                            好想放东西进去[12P]</em></a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
+
+

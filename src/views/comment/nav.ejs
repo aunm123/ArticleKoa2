@@ -1,16 +1,16 @@
 
 <div id="header_box">
     <div class="wrap mt15 nav">
+
+        <% categories.forEach(function (item) { %>
         <ul class="nav_menu clearfix">
-            <li class="active">新闻热点</li>
-            <li><a href="" target="_blank"></a></li>
-            <li><a href="" target="_blank"></a></li>
-            <li><a href="" target="_blank"></a></li>
-            <li><a href="" target="_blank"></a></li>
-            <li><a href="" target="_blank"></a></li>
-            <li><a href="" target="_blank"></a></li>
-            <li><a href="" target="_blank"></a></li>
-            <li><a href="" target="_blank"></a></li>
+            <li class="active"><%= item.name %></li>
+            <% item.chirld.forEach(function (item2, index2) {  if (index2 < 8) {%>
+            <li><a href="/photo/<%=item2.id%>/1.html" target="_blank">
+                    <%= item2.name %>
+                </a></li>
+            <%} }) %>
         </ul>
+        <% }) %>
     </div>
 </div>
