@@ -2,6 +2,11 @@
 
 <div class="wrap mt20">
     <div class="box cat_pos clearfix">
+        <span class="cat_pos_l">您的位置：
+            <a href="/">首页</a>&nbsp;&nbsp;»&nbsp;&nbsp;
+            <a href="/video/list/<%= current_category.id %>/1"><%= current_category.name %></a>&nbsp;&nbsp;»&nbsp;&nbsp;
+            <a href="#"><%- video.name %></a>
+        </span>
     </div>
 </div>
 
@@ -9,33 +14,26 @@
     <div class="box">
         <div class="film_info clearfix">
             <dl>
-                <dt><a href="/html/play/9231.html" target="_blank">
-                        <img src="/data/video/tpzp/2018/04/25/173qr1524643350491.jpg" title="" alt="" border="0"></a>
-                </dt>
-                <dd class="film_title">CCTV 1-综合HD</dd>
-                <dd>类型：<span></span></dd>
-                <dd>
-                    <a href="/video/play/9231" target="_blank">
-                        <img src="/images/uxs.jpeg" alt="" border="0">
-                    </a>
+                <dt><a href="/video/play/<%- video.id %>" target="_blank"><img
+                                src="<%- video.icon %>"
+                                title="<%- video.name %>" alt="<%- video.name %>" border="0"></a></dt>
+                <dd class="film_title"><%- video.name %></dd>
+                <dd>类型：<span><%= current_category.name %></span></dd>
+                <dd><a href="/video/play/<%- video.id %>" target="_blank">
+                        <img src="/images/bf.png" alt="" border="0"></a>
                 </dd>
             </dl>
-            <div class="film_info_r">
-                <!--<img src="/static/images/ads.gif" style="display: none !important;">-->
-            </div>
 
         </div>
 
-        <!--<div class="film_bar clearfix"><span>1、播放地址：</span>-->
-            <!--<ul>-->
-                <!--<ul>-->
-                    <!--<li>-->
-                        <!--<a title="第1集" href="/video/play/9231" target="_blank">开始</a>-->
-                    <!--</li>-->
-                <!--</ul>-->
-            <!--</ul>-->
-        <!--</div>-->
-        <!--<div class="film_photo"></div>-->
+        <div class="film_bar clearfix"><span>1.播放地址：</span>
+            <ul>
+                <ul>
+                    <li><a title="第1集" href="/video/play/<%- video.id %>" target="_blank">开始</a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="film_photo"></div>
 
     </div>
 </div>

@@ -1,29 +1,5 @@
 <% include ../comment/header.ejs %>
 
-<script type="text/javascript">
-	function addCssByLink(url) {
-		var doc = document;
-		var link = doc.createElement("link");
-		link.setAttribute("rel", "stylesheet");
-		link.setAttribute("type", "text/css");
-		link.setAttribute("href", url);
-
-		var heads = doc.getElementsByTagName("head");
-		if (heads.length)
-			heads[0].appendChild(link);
-		else
-			doc.documentElement.appendChild(link);
-	}
-
-	// addCssByLink('/css/jinri.css')
-</script>
-<style type="text/css">
-    .lazy {
-        width: 80%;
-        min-height: 400px;
-        background: url('/images/loading.gif') 50% no-repeat;
-    }
-</style>
 <div class="wrap mt20">
     <div class="box cat_pos clearfix">
         <span class="cat_pos_l">您的位置：
@@ -36,9 +12,9 @@
 <div class="wrap mt20">
     <div class="txt">
         <div class="thead">
-            <%- article.name %>
+            <!--<%- article.name %>-->
         </div>
-        <div class="tcont" style="text-align: center;">
+        <div class="tcont detail-div" style="text-align: center;">
             <%- article.content %>
         </div>
 
@@ -48,19 +24,17 @@
 <script src="/js/echo.min.js"></script>
 <script>
 	$(function () {
-
 		$('.tcont img').addClass('lazy');
-//		$('.tcont img').each(function (index, item) {
-//			let ii = $(item);
-//			let sourceUrl = ii.attr('src');
-//			ii.attr('src','/images/blank.gif');
-//			ii.attr('data-echo',sourceUrl);
-//		})
-
-		Echo.init({
-			offset: 0,
-			throttle: 0
-		});
+		// $('.tcont img').each(function (index, item) {
+		// 	let ii = $(item);
+		// 	let sourceUrl = ii.attr('src');
+		// 	ii.attr('src','/images/blank.gif');
+		// 	ii.attr('data-echo',sourceUrl);
+		// })
+		// Echo.init({
+		// 	offset: 1000,
+		// 	throttle: 0
+		// });
 	})
 </script>
 

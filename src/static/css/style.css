@@ -658,7 +658,7 @@ img {
 .new .nbar {
 	height: 45px;
 	line-height: 45px;
-	background-color: #F8F5CB;
+	background-color: #999999;
 	width: 100%;
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
@@ -672,7 +672,7 @@ img {
 
 .new .nbar .nle h3 {
 	font-size: 16px;
-	color: #17937B;
+	color: #FFFFFF;
 	margin-left: 36px;
 }
 
@@ -744,7 +744,7 @@ img {
 .new .nbox ul li {
 	float: left;
 	margin: 20px 0px 0px 10px;
-	border: 1px solid #77CB13;
+	border: 1px solid #f8f5cc;
 	padding: 0px;
 	text-align: center;
 	width: 180px;
@@ -753,8 +753,8 @@ img {
 .new .nbox ul li a {
 	float: left;
 	width: 180px;
-	background-color: #C7E7A0;
-	color: #0C5B4B;
+    background-color: #CCCCCC;
+    color: #333333;
 }
 
 .new .nbox ul li a:hover {
@@ -1013,4 +1013,38 @@ img {
 	margin-top: 7px;
     display: block;
     text-align: center;
+}
+
+.detail-div p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.lazy {
+    align-items: center;
+    flex: 1;
+    /*padding: 0 20px;*/
+    min-height: 400px;
+    text-align: center;
+    background: url('/images/loading.gif') no-repeat center center;
+}
+
+.video-list-row {
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.multi-break {
+    width:164px;
+    max-height: 25px!important;
+    line-height: 25px!important;
+    min-height: 25px!important;
+    word-break:break-all;
+    display:-webkit-box;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
 }

@@ -1,42 +1,40 @@
 <% include ../comment/header.ejs %>
 
+<script type="text/javascript" src="/js/ckplayer/ckplayer.js"></script>
+
 <div class="wrap mt20">
     <div class="box cat_pos clearfix">
+        <span class="cat_pos_l">您的位置：
+            <a href="/">首页</a>&nbsp;&nbsp;»&nbsp;&nbsp;
+            <a href="/video/list/<%= current_category.id %>/1"><%= current_category.name %></a>&nbsp;&nbsp;»&nbsp;&nbsp;
+            <a href="#"><%- video.name %></a>
+        </span>
     </div>
 </div>
 
+
 <div class="wrap mt20">
-    <div class="box">
-        <div class="film_info clearfix">
-            <dl>
-                <dt><a href="/html/play/9231.html" target="_blank">
-                        <img src="/data/video/tpzp/2018/04/25/173qr1524643350491.jpg" title="" alt="" border="0"></a>
-                </dt>
-                <dd class="film_title"></dd>
-                <dd>类型：<span></span></dd>
-                <dd>
-                    <a href="/html/play/9231.html" target="_blank">
-                        <img src="https://mbd.baidu.com/newspage/data/landingsuper?context=%7B%22nid%22%3A%22news_17889228057990460249%22%7D&n_type=0&p_from=1" alt="" border="0">
-                    </a>
-                </dd>
-            </dl>
-            <div class="film_info_r">
-                <img src="/static/images/ads.gif" style="display: none !important;">
+    <div class="box play">
+        <div class="player">
+
+            <div id="content_jr" class="player_l" align="center"
+                 style="text-align: center; width: 960px; height: 560px; background-color: rgb(0, 0, 0); overflow: hidden; position: relative;">
+
+                <div id="ckplayercVideo" style="background-color: rgb(0, 0, 0); width: 100%; height: 100%;"></div>
+
+                <script type="text/javascript">
+					var videoObject = {
+						container: '#ckplayercVideo',
+						autoplay: false,
+						variable: 'player',
+						poster: '<%=video.icon%>',
+						video: '<%=video.url%>'
+					};
+					var player = new ckplayer(videoObject);
+                </script>
             </div>
-
         </div>
-
-        <div class="film_bar clearfix"><span>1、播放地址：</span>
-            <ul>
-                <ul>
-                    <li>
-                        <a title="第1集" href="/html/play/9231.html" target="_blank">开始</a>
-                    </li>
-                </ul>
-            </ul>
-        </div>
-        <div class="film_photo"></div>
-
+        <div class="clear"></div>
     </div>
 </div>
 
