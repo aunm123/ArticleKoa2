@@ -18,7 +18,8 @@ module.exports = (app)=>{
         await next();
 		await ctx.render('index', { name : "asdasdas"})
     });
-	
+
+	// 所有页面都获取分类信息
 	app.use(async (ctx,next)=>{
 		
 		let op = reqUrl('/category/list', {});
@@ -45,6 +46,6 @@ module.exports = (app)=>{
 		ctx.state.categories = tempCat;
 		
 		await next();
-	})
+	});
 	app.use(router.routes())
 }

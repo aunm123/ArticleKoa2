@@ -26,23 +26,60 @@
 </style>
 <div class="wrap mt20">
     <div class="box cat_pos clearfix">
+        <span class="cat_pos_l">您的位置：<a href="/">首页</a>&nbsp;&nbsp;»&nbsp;&nbsp;<a
+                    href="/photo/list/<%= current_category.id %>/1">
+                <%= current_category.name %></a>
+        </span>
+        <span class="cat_pos_2"><a href="/"><b>热门TAG：</b>草榴社区,黄色网站,色情网站,黄色小说,日本成人A片,成人电影网</a></span>
     </div>
 </div>
 <div class="wrap mt20">
     <div class="new">
         <div class="nbar">
-            <div class="nle"><h3>亚洲图片</h3></div>
+            <div class="nle"><h3><%= current_category.name %></h3></div>
         </div>
         <div class="plist">
-            <ul>
-                <li style="color: rgb(51, 51, 51); background-color: rgb(255, 255, 255);"><a
-                            href="/html/photo/19536.html" target="_blank" title="迷人的红唇 好想放东西进去[12P]"><em>迷人的红唇
-                            好想放东西进去[12P]</em></a></li>
+
+            <% article.list.forEach(function (item) { %>
+            <ul style="margin: 0px">
+                <li style="color: rgb(51, 51, 51); background-color: rgb(255, 255, 255);">
+                    <a href="/photo/detail/<%= item.id %>" target="_blank"
+                       title="<%= item.name %>"><em><%= item.name %></em>
+                    </a>
+                </li>
             </ul>
+            <% }) %>
+
+            <div class="npage">
+                <div id="pagination" class="pagination page fl" style="text-align: right;margin: 30px 22px;">
+
+                </div>
+            </div>
         </div>
 
     </div>
 </div>
+
+<script src="/js/pagination.min.js"></script>
+
+<script type="text/javascript">
+	$("#pagination").pagination({
+		currentPage: parseInt('<%=page%>'),
+		totalPage: parseInt('<%=pageCount%>'),
+		isShow: true,
+		count: 7,
+		homePageText: "首页",
+		endPageText: "尾页",
+		prevPageText: "上一页",
+		nextPageText: "下一页",
+		callback: function(current) {
+			window.location.href="/photo/list/<%= current_category.id %>/"+current
+		}
+	});
+</script>
+
+
+<% include ../comment/footer.ejs %>
 
 
 

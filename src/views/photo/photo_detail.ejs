@@ -26,6 +26,11 @@
 </style>
 <div class="wrap mt20">
     <div class="box cat_pos clearfix">
+        <span class="cat_pos_l">您的位置：
+            <a href="/">首页</a>&nbsp;&nbsp;»&nbsp;&nbsp;
+            <a href="/photo/list/<%= current_category.id %>/1"><%= current_category.name %></a>&nbsp;&nbsp;»&nbsp;&nbsp;
+            <a href="#"><%- article.name %></a>
+        </span>
     </div>
 </div>
 <div class="wrap mt20">
@@ -59,6 +64,7 @@
 	})
 </script>
 
+<% include ../comment/footer.ejs %>
 
 
 
