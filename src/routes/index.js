@@ -5,6 +5,7 @@ const ArticleRoute = require('./article');
 const VideoRoute = require('./video');
 const rq = require('request-promise');
 const {reqUrl} = require('../util/Config.js');
+const homeController = require('../controllers/homeController');
 
 
 module.exports = (app)=>{
@@ -14,10 +15,7 @@ module.exports = (app)=>{
 	router.use('/article',ArticleRoute.routes(),ArticleRoute.allowedMethods());
 	router.use('/video',VideoRoute.routes(),VideoRoute.allowedMethods());
 
-	router.get('/',async (ctx,next)=>{
-        await next();
-		await ctx.render('index', { name : "asdasdas"})
-    });
+	router.get('/', homeController.home);
 
 	// 所有页面都获取分类信息
 	app.use(async (ctx,next)=>{
