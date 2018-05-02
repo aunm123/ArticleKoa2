@@ -14,12 +14,12 @@
     <div class="box">
         <div class="film_info clearfix">
             <dl>
-                <dt><a href="/video/play/<%- video.id %>" target="_blank"><img
+                <dt><a href="/video/play/<%- video.id %>"><img
                                 src="<%- video.icon %>"
                                 title="<%- video.name %>" alt="<%- video.name %>" border="0"></a></dt>
                 <dd class="film_title"><%- video.name %></dd>
                 <dd>类型：<span><%= current_category.name %></span></dd>
-                <dd><a href="/video/play/<%- video.id %>" target="_blank">
+                <dd><a href="/video/play/<%- video.id %>">
                         <img src="/images/bf.png" alt="" border="0"></a>
                 </dd>
             </dl>
@@ -29,7 +29,7 @@
         <div class="film_bar clearfix"><span>1.播放地址：</span>
             <ul>
                 <ul>
-                    <li><a title="第1集" href="/video/play/<%- video.id %>" target="_blank">开始</a></li>
+                    <li><a title="开始" href="/video/play/<%- video.id %>" >开始</a></li>
                 </ul>
             </ul>
         </div>
