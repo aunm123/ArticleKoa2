@@ -1,0 +1,28 @@
+<% include ../comment/header.ejs %>
+
+<div class="wrap mt20">
+    <div class="box cat_pos clearfix">
+        <span class="cat_pos_l">您的位置：
+            <a href="/">首页</a>&nbsp;&nbsp;»&nbsp;&nbsp;
+            <a href="/article/list/<%= current_category.id %>/1"><%= current_category.name %></a>&nbsp;&nbsp;»&nbsp;&nbsp;
+            <a href="#"><%- article.name %></a>
+        </span>
+    </div>
+</div>
+<div class="wrap mt20">
+    <div class="txt">
+        <div class="thead">
+            <%- article.name %>
+        </div>
+        <div class="tcont">
+            <%- article.content %>
+        </div>
+
+    </div>
+</div>
+
+
+<% include ../comment/footer.ejs %>
+
+
+

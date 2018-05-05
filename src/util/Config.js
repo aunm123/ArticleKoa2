@@ -1,7 +1,8 @@
 
 function url(action, params= {} ,method = 'POST') {
+	console.log("发送请求",'http://8.6.8.119:8080'+action);
 	return {
-		uri: 'http://localhost:8090'+action,
+		uri: 'http://8.6.8.119:8080'+action,
 		method: method,
 		formData: params,
 	}

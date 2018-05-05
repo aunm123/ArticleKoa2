@@ -6225,7 +6225,7 @@ function ckplayerConfig() {
 		loadJs: function(path, success) {
 			var oHead = document.getElementsByTagName('HEAD').item(0);
 			var oScript = document.createElement('script');
-			oScript.type = 'text/javascript';
+			oScript.type = 'article/javascript';
 			oScript.src = this.getNewUrl(path);
 			oHead.appendChild(oScript);
 			oScript.onload = function() {

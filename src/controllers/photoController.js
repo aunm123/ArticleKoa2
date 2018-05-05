@@ -39,6 +39,9 @@ let photoController = {
 		let current_category = await rq(op2);
 		current_category = JSON.parse(current_category);
 
+		let hasReadop = reqUrl('/count/hasReadArticle', {articleid: aid});
+		await rq(hasReadop);
+
 		await next();
 		await ctx.render('photo/photo_detail', {
 			article,

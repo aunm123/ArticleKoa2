@@ -40,10 +40,19 @@ module.exports = (app)=>{
 				}
 			})
 		});
+
+		let op2 = reqUrl('/mcategory/list', {});
+		let mcategories = await rq(op2);
+		mcategories = JSON.parse(mcategories);
+
+		tempCat.push({
+			name: "电影专区",
+			chirld:mcategories})
 		
 		ctx.state.categories = tempCat;
 		
 		await next();
+		ctx.status = 200;
 	});
 	app.use(router.routes())
 }

@@ -53,6 +53,9 @@ let videoController = {
 		let current_category = await rq(op2);
 		current_category = JSON.parse(current_category);
 
+		let hasReadop = reqUrl('/count/hasReadMovice', {moviceid: videoid});
+		await rq(hasReadop);
+
 		await next();
 		await ctx.render('video/video_play',{
 			video,
