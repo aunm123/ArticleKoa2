@@ -26,6 +26,7 @@ module.exports = (app)=>{
 		categories = JSON.parse(categories);
 		
 		let tempCat = [];
+		let tempmCat = [];
 		
 		categories.forEach(function (item) {
 			if (item.level === 1){
@@ -45,11 +46,12 @@ module.exports = (app)=>{
 		let mcategories = await rq(op2);
 		mcategories = JSON.parse(mcategories);
 
-		tempCat.push({
+		tempmCat.push({
 			name: "电影专区",
 			chirld:mcategories})
 		
 		ctx.state.categories = tempCat;
+		ctx.state.mcategories = tempmCat;
 		
 		await next();
 		ctx.status = 200;

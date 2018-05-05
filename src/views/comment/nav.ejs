@@ -2,6 +2,17 @@
 <div id="header_box">
     <div class="wrap mt15 nav">
 
+        <% mcategories.forEach(function (item) { %>
+        <ul class="nav_menu clearfix">
+            <li class="active"><%= item.name %></li>
+            <% item.chirld.forEach(function (item2, index2) {  if (index2 < 8) {%>
+            <li><a href="/video/list/<%=item2.id%>/1">
+                    <%= item2.name %>
+                </a></li>
+            <%} }) %>
+        </ul>
+        <% }) %>
+
         <% categories.forEach(function (item) { %>
         <ul class="nav_menu clearfix">
             <li class="active"><%= item.name %></li>
@@ -12,5 +23,8 @@
             <%} }) %>
         </ul>
         <% }) %>
+
+
+
     </div>
 </div>
