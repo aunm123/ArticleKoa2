@@ -1,32 +1,39 @@
 {
-  "name": "articlkoa2",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/app.js",
-    "dev": "node-dev ./src/app.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "ejs": "^2.5.9",
-    "koa": "^2.5.1",
-    "koa-bodyparser": "^4.2.0",
-    "koa-router": "^7.4.0",
-    "koa-static": "^4.0.2",
-    "koa-views": "^6.1.4",
-    "log4js": "^2.5.3",
-    "request": "^2.85.0",
-    "request-promise": "^4.2.2"
-  },
-  "devDependencies": {
-    "@types/koa": "^2.0.45",
-    "@types/koa-router": "^7.0.28",
-    "@types/koa-static": "^4.0.0",
-    "@types/koa-views": "^2.0.3",
-    "tslint": "^5.10.0",
-    "typescript": "^2.8.3"
-  }
+    "name": "articlkoa2",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node ./src/app.js",
+        "dev": "node-dev ./src/app.js",
+        "build": "webpack --config webpack.config.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "ejs": "^2.5.9",
+        "koa": "^2.5.1",
+        "koa-bodyparser": "^4.2.0",
+        "koa-router": "^7.4.0",
+        "koa-static": "^4.0.2",
+        "koa-views": "^6.1.4",
+        "log4js": "^2.5.3",
+        "request": "^2.85.0",
+        "request-promise": "^4.2.2"
+    },
+    "devDependencies": {
+        "@types/koa": "^2.0.45",
+        "@types/koa-router": "^7.0.28",
+        "@types/koa-static": "^4.0.0",
+        "@types/koa-views": "^2.0.3",
+        "babel-loader": "^7.1.4",
+        "clean-webpack-plugin": "^0.1.19",
+        "copy-webpack-plugin": "^4.5.1",
+        "externals-dependencies": "^1.0.4",
+        "tslint": "^5.10.0",
+        "typescript": "^2.8.3",
+        "webpack": "^3.11.0",
+        "webpack-cli": "^2.1.2"
+    }
 }

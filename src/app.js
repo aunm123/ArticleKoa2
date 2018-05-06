@@ -15,10 +15,10 @@ app.use(bodyParser());
 
 // 静态资源目录对于相对入口文件index.js的路径
 app.use(kstatic(
-	path.join(__dirname, './static')
+	'./static'
 ));
 // 加载模板引擎
-app.use(views(path.join(__dirname, './views'), {
+app.use(views('./views', {
 	extension: 'ejs'
 }));
 
