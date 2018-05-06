@@ -24,26 +24,41 @@
 
                 <script type="text/javascript">
 
-                    var videoObject = {
-                        container: '#ckplayercVideo',
-                        variable: 'player',
-                        loading: {
-                            file: '/js/ckplayer/loading.swf',
-                            align: 'center',
-                            vAlign: 'middle',
-                            offsetX: -100,
-                            offsetY: -40
-                        },
-                        poster: '<%= video.icon %>',
-                        //flashplayer:true,
-                        video: '<%= video.url %>'
-                    };
-                    var player = new ckplayer(videoObject);
+					var videoObject = {
+						container: '#ckplayercVideo',
+						variable: 'player',
+						loading: {
+							file: '/js/ckplayer/loading.swf',
+							align: 'center',
+							vAlign: 'middle',
+							offsetX: -100,
+							offsetY: -40
+						},
+						autoplay:true,
+						poster: '<%= video.icon %>',
+						//flashplayer:true,
+						video: '<%= video.url %>'
+					};
+					var player = new ckplayer(videoObject);
 
                 </script>
             </div>
         </div>
         <div class="clear"></div>
+        <div class="box cat_pos clearfix">
+            <span class="cat_pos_l2">
+                <h3 align="center">
+                    <font size="4" color="red">
+                        <a target="_self" href="javascript:void(0)"
+                           onclick="">无法观看时，请点我</a> |
+                        <a target="_self" href="javascript:void(0)"
+                                onclick="">视频加载失败，请点我</a>
+                    </font>
+                </h3>
+            </span>
+            <br>
+
+        </div>
     </div>
 </div>
 
