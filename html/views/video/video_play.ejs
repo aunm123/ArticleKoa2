@@ -2,6 +2,9 @@
 
 <script type="text/javascript" src="/js/ckplayerx/ckplayer.js"></script>
 
+<link rel="stylesheet" href="/css/alert.css">
+<script src='/js/alert.js'></script>
+
 <div class="wrap mt20">
     <div class="box cat_pos clearfix">
         <span class="cat_pos_l">您的位置：
@@ -35,7 +38,7 @@
 							offsetY: -40
 						},
 						autoplay:true,
-						poster: '<%= video.icon %>',
+						poster: '<%=imghost%><%= video.icon %>',
 						//flashplayer:true,
 						video: '<%= video.url %>'
 					};
@@ -50,9 +53,9 @@
                 <h3 align="center">
                     <font size="4" color="red">
                         <a target="_self" href="javascript:void(0)"
-                           onclick="">无法观看时，请点我</a> |
+                           onclick="complain(<%=video.id%>)">无法观看时，请点我</a> |
                         <a target="_self" href="javascript:void(0)"
-                                onclick="">视频加载失败，请点我</a>
+                                onclick="complain(<%=video.id%>)">视频加载失败，请点我</a>
                     </font>
                 </h3>
             </span>
@@ -62,5 +65,31 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    var M = {}
+    function complain(videoid) {
+		if(M.dialog5){
+			return M.dialog5.show();
+		}
+		M.dialog5 = jqueryAlert({
+			'content' : '<div style="text-align: center"><p>感谢您的支持，站长将尽快处理！！！</p><p>请返回浏览更多精彩内容</p></div>' ,
+			'modal'   : true,
+			'contentTextAlign' : 'left',
+			'width'   : '400px',
+			'animateType' : 'linear',
+			'buttons' :{
+				'确定' : function(){
+					M.dialog5.close();
+				}
+			}
+		})
+    	if (videoid!=null||videoid!==''){
+			$.ajax({
+				url: "/video/complain/"+videoid,
+				success: function(){
 
+				}});
+        }
+	}
+</script>
 <% include ../comment/footer.ejs %>

@@ -16,13 +16,13 @@ let photoController = {
 		let current_category = await rq(op2);
 		current_category = JSON.parse(current_category);
 
-
+		ctx.state.title = current_category.name;
 		await next();
 		await ctx.render('photo/photo_lsit', {
 			article,
 			current_category,
 			page,
-			pageCount: Math.ceil(article.count / 20.0)
+			pageCount: Math.ceil(article.counts / 20.0)
 		});
 
 	},
@@ -41,7 +41,7 @@ let photoController = {
 
 		let hasReadop = reqUrl('/count/hasReadArticle', {articleid: aid});
 		await rq(hasReadop);
-
+		ctx.state.title = article.name;
 		await next();
 		await ctx.render('photo/photo_detail', {
 			article,

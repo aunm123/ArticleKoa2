@@ -14,9 +14,11 @@
     <div class="box">
         <div class="film_info clearfix">
             <dl>
-                <dt><a href="/video/play/<%- video.id %>"><img
-                                src="<%- video.icon %>"
-                                title="<%- video.name %>" alt="<%- video.name %>" border="0"></a></dt>
+                <dt><a href="/video/play/<%- video.id %>">
+                        <img src="<%=imghost%><%= video.icon %>" title="<%- video.name %>"
+                             alt="<%- video.name %>" border="0">
+                    </a>
+                </dt>
                 <dd class="film_title"><%- video.name %></dd>
                 <dd>类型：<span><%= current_category.name %></span></dd>
                 <dd><a href="/video/play/<%- video.id %>" >

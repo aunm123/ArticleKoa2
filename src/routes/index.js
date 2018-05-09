@@ -4,7 +4,7 @@ const PhotoRoute = require('./photo');
 const ArticleRoute = require('./article');
 const VideoRoute = require('./video');
 const rq = require('request-promise');
-const {reqUrl} = require('../util/Config.js');
+const {reqUrl, imghost} = require('../util/Config.js');
 const homeController = require('../controllers/homeController');
 
 
@@ -48,10 +48,12 @@ module.exports = (app)=>{
 
 		tempmCat.push({
 			name: "电影专区",
-			chirld:mcategories})
+			chirld:mcategories});
 		
 		ctx.state.categories = tempCat;
 		ctx.state.mcategories = tempmCat;
+		ctx.state.imghost = imghost;
+		ctx.state.title = '';
 		
 		await next();
 		ctx.status = 200;

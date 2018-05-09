@@ -11,7 +11,7 @@ let videoController = {
 		let op2 = reqUrl('/mcategory/find', {mcategoryid: video.mcategoryId});
 		let current_category = await rq(op2);
 		current_category = JSON.parse(current_category);
-
+		ctx.state.title = video.name;
 		await next();
 		await ctx.render('video/video_detail',{
 			video,
@@ -32,7 +32,7 @@ let videoController = {
 		let current_category = await rq(op2);
 		current_category = JSON.parse(current_category);
 
-
+		ctx.state.title = current_category.name;
 		await next();
 		await ctx.render('video/video_list', {
 			videos,
@@ -55,14 +55,23 @@ let videoController = {
 
 		let hasReadop = reqUrl('/count/hasReadMovice', {moviceid: videoid});
 		await rq(hasReadop);
-
+		ctx.state.title = video.name;
 		await next();
 		await ctx.render('video/video_play',{
 			video,
 			current_category
 		});
 
-	}
+	},
+	complain: async (ctx, next) => {
+		// /play/:videoid
+		let videoid = ctx.params.videoid;
+		let op = reqUrl('/count/complainMovice', {moviceid: videoid});
+		await rq(op);
+		await next();
+		ctx.body = '';
+
+	},
 }
 
 module.exports = videoController;

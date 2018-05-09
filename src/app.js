@@ -15,10 +15,10 @@ app.use(bodyParser());
 
 // 静态资源目录对于相对入口文件index.js的路径
 app.use(kstatic(
-	'./static'
+	path.join('html', './static')
 ));
 // 加载模板引擎
-app.use(views('./views', {
+app.use(views(path.join('html', './views'), {
 	extension: 'ejs'
 }));
 
@@ -36,13 +36,13 @@ app.use(async (ctx, next) => {
 	await next();
 	const ms = new Date() - start;
 	log4js.resLogger(ctx, ms)
-})
+});
 
 app.on('error', (err, ctx) => {
 	log4js.errLogger(ctx, err);
 	console.error('server error', err, ctx)
 });
 
-app.listen(8000, () => {
+app.listen(8899, () => {
 	console.log("app start");
 });

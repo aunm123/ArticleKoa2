@@ -1,13 +1,19 @@
+let host = 'http://149.28.20.156';
+let apihost = host + ':8898';
 
-function url(action, params= {} ,method = 'POST') {
-	console.log("发送请求",'http://8.6.8.119:8080'+action);
+// let host = 'http://localhost';
+// let apihost = host + ':8090';
+
+function url(action, params = {}, method = 'POST') {
+	console.log("发送请求", apihost + action);
 	return {
-		uri: 'http://149.28.20.156:8898'+action,
+		uri: apihost + action,
 		method: method,
 		formData: params,
 	}
 }
 
 module.exports = {
-	reqUrl : url
+	reqUrl: url,
+	imghost: host
 };

@@ -20,7 +20,7 @@
                 <% videos.list.forEach(function (item) { %>
                 <li>
                     <a href="/video/detail/<%= item.id %>" title="<%= item.name %>" target="_blank">
-                        <img class="video-list-row" style="background-image: url('<%= item.icon %>')">
+                        <img class="video-list-row" style="background-image: url('<%=imghost%><%= item.icon %>')">
                         <p class="multi-break"><%= item.name %></p>
                     </a>
                 </li>

@@ -1009,6 +1009,7 @@ img {
 }
 
 .txt .tcont img {
+    width: 100%;
 	margin-top: 7px;
     display: block;
     text-align: center;

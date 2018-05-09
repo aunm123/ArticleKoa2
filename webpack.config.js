@@ -34,7 +34,6 @@ module.exports = {
 		rules: [
 			{
 				test: /\.js/,
-				exclude: /node_modules/,
 				use: ['babel-loader']
 			}
 		]
@@ -42,8 +41,8 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(['dist']),
 		new CopyWebpackPlugin([
-				{from: __dirname + '/src/views', to: __dirname + '/dist/views'},
-				{from: __dirname + '/src/static', to: __dirname + '/dist/static'}
+				{from: __dirname + '/html/views', to: __dirname + '/dist/html/views'},
+				{from: __dirname + '/html/static', to: __dirname + '/dist/html/static'}
 			])
 	]
 }
