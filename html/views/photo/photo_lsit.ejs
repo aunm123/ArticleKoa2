@@ -19,7 +19,7 @@
             <% article.list.forEach(function (item) { %>
             <ul style="margin: 0px">
                 <li style="color: rgb(51, 51, 51); background-color: rgb(255, 255, 255);">
-                    <a href="/photo/detail/<%= item.id %>" target="_blank"
+                    <a href="/<%if(item.icon!==''){%>photo<%}else {%>article<%}%>/detail/<%= item.id %>" target="_blank"
                        title="<%= item.name %>"><em><%= item.name %></em>
                     </a>
                 </li>

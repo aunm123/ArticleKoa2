@@ -49,8 +49,20 @@ module.exports = (app)=>{
 		tempmCat.push({
 			name: "电影专区",
 			chirld:mcategories});
-		
-		ctx.state.categories = tempCat;
+
+		let tempA = [];
+		let tempP = [];
+		tempCat.forEach((item)=>{
+			if(item.parentid===7||item.id===7){
+				tempP.push(item);
+			}
+			if(item.parentid===18||item.id===18){
+				tempA.push(item);
+			}
+		});
+		ctx.state.pcategories = tempP;
+		ctx.state.acategories = tempA;
+
 		ctx.state.mcategories = tempmCat;
 		ctx.state.imghost = imghost;
 		ctx.state.title = '';

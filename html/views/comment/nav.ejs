@@ -13,11 +13,22 @@
         </ul>
         <% }) %>
 
-        <% categories.forEach(function (item) { %>
+        <% pcategories.forEach(function (item) { %>
         <ul class="nav_menu clearfix">
             <li class="active"><%= item.name %></li>
             <% item.chirld.forEach(function (item2, index2) {  if (index2 < 8) {%>
             <li><a href="/photo/list/<%=item2.id%>/1">
+                    <%= item2.name %>
+                </a></li>
+            <%} }) %>
+        </ul>
+        <% }) %>
+
+        <% acategories.forEach(function (item) { %>
+        <ul class="nav_menu clearfix">
+            <li class="active"><%= item.name %></li>
+            <% item.chirld.forEach(function (item2, index2) {  if (index2 < 8) {%>
+            <li><a href="/article/list/<%=item2.id%>/1">
                     <%= item2.name %>
                 </a></li>
             <%} }) %>

@@ -38,7 +38,7 @@ let videoController = {
 			videos,
 			current_category,
 			page,
-			pageCount: Math.ceil(videos.count / 20.0)
+			pageCount: Math.ceil(videos.counts / 20.0)
 		});
 
 	},

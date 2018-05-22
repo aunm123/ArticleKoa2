@@ -1,4 +1,5 @@
 let host = 'http://149.28.20.156';
+let imghost = 'https://179ny.com';
 let apihost = host + ':8898';
 
 // let host = 'http://localhost';
@@ -15,5 +16,5 @@ function url(action, params = {}, method = 'POST') {
 
 module.exports = {
 	reqUrl: url,
-	imghost: host
+	imghost: imghost
 };
