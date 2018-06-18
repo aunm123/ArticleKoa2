@@ -1,5 +1,5 @@
-let host = 'http://149.28.20.156';
-let imghost = 'https://179ny.com';
+let host = 'http://179ny.com';
+let imghost = 'http://179ny.com';
 let apihost = host + ':8898';
 
 // let host = 'http://localhost';

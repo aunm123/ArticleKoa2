@@ -5,7 +5,19 @@
         <% mcategories.forEach(function (item) { %>
         <ul class="nav_menu clearfix">
             <li class="active"><%= item.name %></li>
-            <% item.chirld.forEach(function (item2, index2) {  if (index2 < 8) {%>
+            <% item.chirld.forEach(function (item2, index2) {  if (item2.level == 1) {%>
+            <li><a href="/video/list/<%=item2.id%>/1">
+                    <%= item2.name %>
+                </a></li>
+            <%} }) %>
+        </ul>
+        <% }) %>
+
+
+        <% mcategories.forEach(function (item) { %>
+        <ul class="nav_menu clearfix">
+            <li class="active">高清视频</li>
+            <% item.chirld.forEach(function (item2, index2) {  if (item2.level == 2) {%>
             <li><a href="/video/list/<%=item2.id%>/1">
                     <%= item2.name %>
                 </a></li>
